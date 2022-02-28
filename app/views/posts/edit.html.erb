@@ -1,0 +1,26 @@
+<h1 class="title" align="center">Edit Post</h1>
+<div class="section">
+  <%= form_with(model: @post, local: true) do |f| %>
+    <div class="field">
+      <div class="control">
+        <p>Title</p>
+        <%= f.text_field :title, wrapper: false , class: 'input', type:"text"%>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="control">
+        <p>Url</p>
+        <%= f.text_area :url, class: 'input' %>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="control">
+        <p>Content</p>
+        <%= f.text_area :content, class: 'input' %>
+      </div>
+    </div>
+    <%= f.button :submit, place_holder: 'Create a new Post', class: "button is-primary" %>
+  <% end %>
+</div>

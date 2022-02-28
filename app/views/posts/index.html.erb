@@ -1,0 +1,18 @@
+<p align="right" style="margin: 1rem"><%= link_to 'Create new Post', new_post_path(@post), class: "button is-primary"%></p>
+<h1 class="title" align="center">List of Posts</h1>
+<div class="container">
+  <%@posts.each do |post| %>
+  <div class="card">
+    <div class="card-content">
+    <div class="media-content">
+      <p><%= link_to post.title, post %>(<%= link_to post.url, post.url,target: :_blank  %>)</p>
+      <p><%= post.likes %> likes
+      <%= post.comments.count %><span> comments</span></p>
+    </div>
+    <div class="content">
+      <p class="content"><%= post.content %></p>
+    </div>
+  </div>
+  </div>
+  <% end %>
+</div>
